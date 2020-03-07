@@ -14,10 +14,11 @@ function createNewToDo() {
 
    toDos.push({
      title: newToDoText.value,
-     complete: false
-     id: id++
+     complete: false,
+     id: id
    });
 
+   id++
 
    newToDoText.value = '';
    console.log(id);
@@ -45,6 +46,8 @@ function renderTheUI() {
       newLi.appendChild(checkbox);
       newLi.appendChild(deleteBtn);
 
+    }
+
 
       deleteBtn.addEventListener('click', event => {
         event.preventDefault();
@@ -54,7 +57,7 @@ function renderTheUI() {
             if( toDo.id < i && id == i){
               return true;
             }else{
-              event.target.parentElement.remove()
+              event.target.parentElement.remove();
             }
           }
         }
@@ -64,17 +67,25 @@ function renderTheUI() {
         toDos = toDos.filter(function(item){
           return item.id ==! toDo.id;
 
-      renderTheUI()
+      renderTheUI();
       });
 
-
-
-
-
+      });
 
     });
 
   }
+
+
+
+
+
+
+
+
+
+
+
 
   addToDoForm.addEventListener('submit', event => {
     event.preventDefault();
@@ -83,9 +94,9 @@ function renderTheUI() {
 
  renderTheUI();
 
- }
 
 
+}
 
 
 
