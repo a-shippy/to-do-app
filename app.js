@@ -46,7 +46,7 @@ function renderTheUI() {
       newLi.appendChild(checkbox);
       newLi.appendChild(deleteBtn);
 
-    }
+    });
 
 
       deleteBtn.addEventListener('click', event => {
